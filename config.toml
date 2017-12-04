@@ -1,7 +1,6 @@
 languageCode = "en-us"
 title = "Fisodd.Org"
-#baseurl = "http://www.fisodd.org/"
-baseurl = "https://awesome-banach-5731e4.netlify.com/"
+baseurl = "http://www.fisodd.org/"
 theme = "restructured"
 
 sectionPagesMenu = "main"
