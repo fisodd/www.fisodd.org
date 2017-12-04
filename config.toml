@@ -1,0 +1,15 @@
+languageCode = "en-us"
+title = "Fisodd.Org"
+baseurl = "http://www.fisodd.org/"
+theme = "restructured"
+
+sectionPagesMenu = "main"
+
+[params]
+  author = "Alexander Carlton"
+
+  # Red Gradient
+  hero_color = "white"
+  hero_grade = "background: #870000; background: linear-gradient(to right, #190a05, #870000);" # https://uigradients.com/#TheStrain
+  edge_grade = "background: #fdfcfb; background: linear-gradient(to bottom, #fdfcfb, #e2d1c3);" # https://webgradients.com -- 029 Everlasting Sky
+
