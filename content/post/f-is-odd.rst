@@ -13,15 +13,15 @@ The pronounciation may be something like ``fizz-sod``,
 but 'fisodd' comes from the observation that
 "f is odd", or more clearly: *F is an odd number*.
 
-For many the idea that 'F' is a number just seems odd (as in strange),
-but for those who spend too much time working with the lower level
-interfaces in computing, 'F' is a perfectly valid number
-representing the value 15, which is odd (not even).
-
 .. sidebar:: Hexidecimal
 
    Specifically, '0xF' represents the value of 15 in
    `Hexadecimal <https://en.wikipedia.org/wiki/Hexadecimal>`_.
+
+For many the idea that 'F' is a number just seems odd (as in strange),
+but for those who spend too much time working with the lower level
+interfaces in computing, 'F' is a perfectly valid number
+representing the value 15, which is odd (not even).
 
 The phrase "F is odd" dates back to this author's time back in college,
 as a dual-major trying to explain
