@@ -30,6 +30,7 @@ OK.  So what?...
 
    -- reStructuredText Documentation
 
+
 reStructuredText Demo
 *********************
  
@@ -120,8 +121,35 @@ pretty much as is, no notable changes are required.
 
    -- Roger Black
 
+
 Implementation Details
 **********************
+
+reStructuredText, and the entire Docutils system,
+is both powerful and flexible,
+capable of generating entire volume-sets of documentation.
+Here we are focusing these tools
+on the relatively simple needs of blog-centric Hugo,
+but while blog content is relatively simple
+the audience for this content
+often encompasses a much wider variety of browser environments.
+
+.. note::
+   :class: sidebar narrow align-left
+
+   It can be illustrative to see the original markup,
+   to compare with the finished results.
+   A copy of the raw markup that was used for this page is available
+   `here </rest/hugo-and-restructuredtext.rst>`__.
+
+There are a few areas where this shift of focus and emphasis
+can be greatly assisted if the authors respect a few details
+in the markup they write.
+Since reStructuredText is designed to be extensible,
+many useful effects can be achieved through existing CSS definitions
+with nothing more than a bit of care to define a few optional values
+when using some of the more powerful directives.
+
 
 Making Figures Responsive
 =========================
@@ -133,7 +161,7 @@ However, being specific in the markup can help
 make the figures more responsive to mobile vistors
 and the many varieties of browser display sizes.
 
-Specifically, for the ``figure`` directives
+Specifically, for the figure directives
 it may help to specify a ``:figwidth:`` option as a percentage, e.g. 30%,
 as this allows the figure to adapt its absolute size
 to match the relative size of the column in the user's browser display.
@@ -163,30 +191,38 @@ except for lacking the ``:width:`` option;
 the difference is
 the image is no longer constrained to fit within the figure boundaries.
 
-Optional Widths for Sidebars
-============================
+
+Overriding the Sidebar Directive
+================================
 
 .. sidebar:: Narrow
-   :class: narrow
+   :class: narrow titleless
 
    This is a narrow sidebar.
    Potentially useful if the content is skinny.
 
-   === ====
-   Num Word
-   === ====
-    0  Zero
-    1  One
-    2  Two
-    3  Many
-    4  Many
-   ... ...
-   999 Many
-   ... ...
-   === ====
+   ===== ====
+   Num   Word
+   ===== ====
+    0    Zero
+    1    One
+    2    Two
+    3    Many
+    4    Many
+   ...   ...
+   |inf| Many
+   ===== ====
+
+.. |INF| replace:: :math:`\infty`
 
 The CSS used here includes a small tweak for sidebars:
 an option for wide or narrow sidebars.
+
+Adding a ``:class: titleless`` option
+to a topic, sidebar, or admonition directive
+will supress the display of that block's title.
+This is occasionally helpful
+when a block's title ends up being more distracting than useful.
 
 Add a ``:class: narrow`` or ``:class: wide`` option
 to the sidebar definition and the matching CSS specification will be used,
@@ -194,13 +230,54 @@ so sidebars can be made to be
 20% (narrow) or 40% (default) or 60% (wide)
 of the width of the column.
 
+.. class:: sidebar align-left
+
+.. pull-quote::
+   Predictably, demonstrating too many features within a short webpage
+   leads to overly cluttered looking results.
+
+Furthermore, several of the directives,
+notably the admonition and topic directives,
+by specifying an optional ``:class: sidebar`` to the markup
+can be given a "sidebar" treatment rather than their default
+front-and-center appearance.
+This can be useful for those cases where the author
+chooses to place less emphasis on the material in the directive.
+
+Finally, if a full-size pull-quote is too much,
+the CSS provided with this theme
+enables this same "sidebar" treatment of pull-quotes.
+However, the markup syntax is a bit more cumbersome
+since the definition for pull-quote in reStructuredText
+does not include optional arguments.
+Still, the use of reStructuredText's class directive
+will assign the specified class to whatever is the directive that follows.
+
+.. code:: ReST
+
+   .. class:: sidebar align-left
+
+   .. pull-quote::
+      Predictably, demonstrating too many features within a short webpage
+      leads to overly cluttered looking results.
+
+
 Code Highlighting
 =================
 
-The Docutils parser is indepentent of the default Hugo markdown parser
+The Docutils package that manages reStructuredText does support
+syntax highlighting with `Pygments <http://pygments.org/>`__.
+If the argument to the code directive is a language understood
+by the version of Pygments installed on the Hugo system,
+then the block will be generated with reasonably classified inline elements.
+
+The Docutils parser is independent of the default Hugo markdown parser
 and hence does not invoke Hugo's default
 `syntax highlighting
-<https://gohugo.io/content-management/syntax-highlighting/>`__.
+<https://gohugo.io/content-management/syntax-highlighting/>`__,
+and so does not include the Chroma highlighter
+that is part of the more recent releases of Hugo.
+
 Full support for syntax highlighting may come
 if/when there is a native Go implementation of reStructuredText.
 Unfortunately, while there are different implementations of
@@ -210,22 +287,24 @@ to be included in Hugo and
 for this enhancement request
 was closed in late 2017 for lack of activity.
 
+..  Examples of how to highlight code, using Python for this example
+
+.. role:: python(code)
+   :language: python
+
 .. code:: python
+   :number-lines:
 
    def my_function():
        "just a test"
        print 8/2
 
-The Docutils package that manages reStructuredText does support
-syntax highlighting with `Pygments <http://pygments.org/>`__.
 If Pygments was successfully installed on the Hugo system,
 the snippet of Python code above should have some syntax highlighting.
+Inline code is also supported,
+for example: :python:`print "some highlight"`
+would be formatted in similar coloring to the block above.
 
 ....
 
 .. [#] Yes, this is a footnote.
-
-.. note:: It can be illustrative to see the original markup,
-   to compare with the finished results.
-   A copy of the raw markup that was used for this page is available
-   `here </rest/hugo-and-restructuredtext.rst>`__.
