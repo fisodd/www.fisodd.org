@@ -1,0 +1,3 @@
+[submodule "themes/hugo-restructured"]
+	path = themes/hugo-restructured
+	url = https://github.com/fisodd/hugo-restructured.git
