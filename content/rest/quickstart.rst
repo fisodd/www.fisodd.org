@@ -18,13 +18,10 @@ A ReStructuredText Primer
 .. contents::
 
 
-The text below contains links that look like "(quickref__)".  These
-are relative links that point to the `Quick reStructuredText`_ user
-reference.  If these links don't work, please refer to the `master
+This is a derived text.
+If the links don't work, please refer to the `master
 quick reference`_ document.
 
-__
-.. _Quick reStructuredText: quickref.html
 .. _master quick reference:
    http://docutils.sourceforge.net/docs/user/rst/quickref.html
 
@@ -42,7 +39,7 @@ consistent patterns.  These patterns are interpreted by a HTML
 converter to produce "Very Structured Text" that can be used by a web
 browser.
 
-The most basic pattern recognised is a **paragraph** (quickref__).
+The most basic pattern recognised is a **paragraph**.
 That's a chunk of text that is separated by blank lines (one is
 enough).  Paragraphs must have the same indentation -- that is, line
 up at their left edge.  Paragraphs that start indented will result in
@@ -66,15 +63,9 @@ Results in:
 
   This is another one.
 
-__ quickref.html#paragraphs
-
 
 Text styles
 -----------
-
-(quickref__)
-
-__ quickref.html#inline-markup
 
 Inside paragraphs and other bodies of text, you may additionally mark
 text for *italics* with "``*italics*``" or **bold** with
@@ -91,20 +82,16 @@ For example, this lone asterisk * is handled just fine, as is the
 asterisk in this equation: 5*6=30.  If you actually
 want text \*surrounded by asterisks* to **not** be italicised, then
 you need to indicate that the asterisk is not special.  You do this by
-placing a backslash just before it, like so "``\*``" (quickref__), or
+placing a backslash just before it, like so "``\*``", or
 by enclosing it in double back-quotes (inline literals), like this::
 
     ``*``
 
-__ quickref.html#escaping
-
 .. Tip:: Think of inline markup as a form of (parentheses) and use it
    the same way: immediately before and after the text being marked
    up.  Inline markup by itself (surrounded by whitespace) or in the
-   middle of a word won't be recognized.  See the `markup spec`__ for
+   middle of a word won't be recognized.  See the markup spec for
    full details.
-
-__ ../../ref/rst/restructuredtext.html#inline-markup
 
 
 Lists
@@ -119,8 +106,7 @@ in the list item.
 Lists must always start a new paragraph -- that is, they must appear
 after a blank line.
 
-**enumerated** lists (numbers, letters or roman numerals; quickref__)
-  __ quickref.html#enumerated-lists
+**enumerated** lists (numbers, letters or roman numerals)
 
   Start a line off with a number or letter followed by a period ".",
   right bracket ")" or surrounded by brackets "( )" -- whatever you're
@@ -170,8 +156,7 @@ after a blank line.
 
   1) and again
 
-**bulleted** lists (quickref__)
-  __ quickref.html#bullet-lists
+**bulleted** lists
 
   Just like enumerated lists, start the line off with a bullet point
   character - either "-", "+" or "*"::
@@ -194,8 +179,7 @@ after a blank line.
 
     - another item
 
-**definition** lists (quickref__)
-  __ quickref.html#definition-lists
+**definition** lists
 
   Unlike the other two, the definition lists consist of a term, and
   the definition of that term.  The format of a definition list is::
@@ -221,9 +205,6 @@ after a blank line.
 
 Preformatting (code samples)
 ----------------------------
-(quickref__)
-
-__ quickref.html#literal-blocks
 
 To just include a chunk of preformatted, never-to-be-fiddled-with
 text, finish the prior paragraph with "``::``".  The preformatted
@@ -268,10 +249,6 @@ Results in:
 
 Sections
 --------
-
-(quickref__)
-
-__ quickref.html#section-structure
 
 To break longer text up into sections, you use **section headers**.
 These are a single line of text (one or more words) with adornment: an
@@ -363,11 +340,7 @@ for aesthetics.
 Images
 ------
 
-(quickref__)
-
-__ quickref.html#directives
-
-To include an image in your document, you use the the ``image`` directive__.
+To include an image in your document, you use the the ``image`` directive.
 For example::
 
   .. image:: images/biohazard.png
@@ -387,10 +360,16 @@ you wish to supply additional information, you may::
      :scale: 50
      :alt: alternate text
 
-See the full `image directive documentation`__ for more info.
+which results in:
 
-__ ../../ref/rst/directives.html
-__ ../../ref/rst/directives.html#images
+.. image:: images/biohazard.png
+   :height: 100
+   :width: 200
+   :scale: 50
+   :alt: alternate text
+
+See the full image directive documentation for more info.
+
 
 
 What Next?
@@ -399,16 +378,15 @@ What Next?
 This primer introduces the most common features of reStructuredText,
 but there are a lot more to explore.  The `Quick reStructuredText`_
 user reference is a good place to go next.  For complete details, the
-`reStructuredText Markup Specification`_ is the place to go [#]_.
+`reStructuredText Markup Specification`_ is the place to go.
 
 Users who have questions or need assistance with Docutils or
 reStructuredText should post a message to the Docutils-users_ mailing
 list.
 
-.. [#] If that relative link doesn't work, try the master document:
-   http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html.
-
+.. _Quick reStructuredText:
+   http://docutils.sourceforge.net/docs/user/rst/quickref.html
 .. _reStructuredText Markup Specification:
-   ../../ref/rst/restructuredtext.html
+   http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html
 .. _Docutils-users: ../mailing-lists.html#docutils-users
 .. _Docutils project web site: http://docutils.sourceforge.net/
