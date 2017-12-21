@@ -2,6 +2,8 @@
 date = "2017-12-20T21:04:13-08:00"
 title = "Pygments"
 description = "A set of code samples, to demonstrate code formatting by Pygments."
+categories = [ "Demo" ]
+tags = [ "Pygments", "reStructuredText", "Hugo", "test" ]
 
 +++
 

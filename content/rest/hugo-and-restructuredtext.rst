@@ -2,7 +2,7 @@
 title: "Hugo and reStructuredText"
 date: 2017-11-30T17:43:07-08:00
 description: "Using reStructuredText in Hugo, and why."
-tags: [ "hugo", "restructuredtext", "markup" ]
+tags: [ "Hugo", "reStructuredText", "markup" ]
 categories: [ "Demo" ]
 weight: 5
 ---
