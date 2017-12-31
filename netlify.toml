@@ -3,4 +3,4 @@
 
 [context.production.environment]
   HUGO_VERSION = "0.20"
-  HIGO_ENV = "production"
+  HUGO_ENV = "production"
