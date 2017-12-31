@@ -4,7 +4,6 @@ baseurl = "https://www.fisodd.org/"
 theme = "hugo-restructured"
 
 sectionPagesMenu = "main"
-googleAnalytics = "UA-79887258-2"
 
 [params]
   author = "Alexander Carlton"
