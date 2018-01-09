@@ -6,7 +6,7 @@ title = "Fisodd.org"
 
 Welcome to `Fisodd </post/f-is-odd/>`__.
 
-This is the much casual, more personal blog space.
+This is the casual, more personal blog space.
 The cleaner, more professional site is `Fisodd.com <https://www.fisodd.com/>`__.
 
 Some recent updates are below.
